@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 
 import { HttpClientModule }    from '@angular/common/http';
+import { ProductSearchComponent } from './product-search/product-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProductSearchComponent
   ],
   imports: [
     BrowserModule,
