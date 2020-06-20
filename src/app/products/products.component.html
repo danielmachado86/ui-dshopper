@@ -1,8 +1,12 @@
 <h2>Products</h2>
 <ul class="products">
   <li *ngFor="let product of products">
-    {{product.picture}}<br/>
-    <span class="badge">{{product.name}}</span><br/>
-    {{product.brand.id}}
+    <a href="">
+      <div>
+        {{product.picture}}<br/>
+        <span class="badge">{{product.name}}</span><br/>
+        {{product.brand.id}}
+      </div>
+    </a>
   </li>
 </ul>
