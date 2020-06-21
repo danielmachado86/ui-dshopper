@@ -6,12 +6,14 @@ import { ProductsComponent } from './products/products.component';
 
 import { HttpClientModule }    from '@angular/common/http';
 import { ProductSearchComponent } from './product-search/product-search.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    ProductSearchComponent
+    ProductSearchComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
