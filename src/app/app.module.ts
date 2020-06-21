@@ -7,6 +7,7 @@ import { ProductsComponent } from './products/products.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
