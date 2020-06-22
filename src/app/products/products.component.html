@@ -1,12 +1,13 @@
 <h2>Products</h2>
 <ul class="products">
-  <li *ngFor="let product of products">
-    <a href="">
-      <div>
-        {{product.picture}}<br/>
-        <span class="badge">{{product.name}}</span><br/>
-        {{product.brand.id}}
-      </div>
-    </a>
+  <li *ngFor="let product of products; let i=index" 
+  [class.selected]="product === selectedProduct"
+  (click)="toggleBox(i)">
+    {{product.picture}}<br/>
+    <span class="badge">{{product.name}}</span><br/>
+    {{product.brand.id}}
+    <div class="product-box" #boxes>
+      <app-product-detail [product]="selectedProduct"></app-product-detail>
+    </div>
   </li>
 </ul>
