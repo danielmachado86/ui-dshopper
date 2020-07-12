@@ -11,5 +11,4 @@ export interface Product {
     barcode:String;
     description:Description;
     tags:Array<string>;
-
 }

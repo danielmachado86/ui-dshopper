@@ -5,9 +5,6 @@
 
     <ul class="search-result">
         <li *ngFor="let product of products$ | async" >
-        <!-- <a routerLink="/detail/{{hero.id}}">
-            {{hero.name}}
-        </a> -->
             {{product.picture}}<br/>
             <span class="badge">{{product.name}}</span><br/>
             {{product.brand.id}}

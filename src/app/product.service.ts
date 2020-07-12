@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ProductService {
 
-  private API_URL= environment.API_URL;
+  private API_URL= environment.PRODUCTS_API_URL;
   private productsUrl = this.API_URL + '/products'; 
 
   constructor( private http: HttpClient) { }
@@ -51,9 +51,9 @@ export class ProductService {
     }
     return this.http.get<Product[]>(`${this.API_URL}/search?q=${term}`).pipe(
       tap(x => x.length ?
-        console.log(`found heroes matching "${term}"`) :
-        console.log(`no heroes matching "${term}"`)),
-      catchError(this.handleError<Product[]>('searchHeroes', []))
+        console.log(`found products matching "${term}"`) :
+        console.log(`no products matching "${term}"`)),
+      catchError(this.handleError<Product[]>('searchProducts', []))
     );
   }
 }
