@@ -1,13 +1,26 @@
-<div id="search-component">
-    <h4><label for="search-box">Product Search</label></h4>
+<div class="text-center border border-light p-3">
+  <h4>Search product</h4>
+</div>
 
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+<div class="d-flex justify-content-center p-5">
+  <input #searchBox (input)="search(searchBox.value)" class="form-control col-lg-5 col-md-7 col-sm-9 col-10" type="text" placeholder="Search" aria-label="Search">
+</div>
 
-    <ul class="search-result">
-        <li *ngFor="let product of products$ | async" >
-            {{product.picture}}<br/>
-            <span class="badge">{{product.name}}</span><br/>
-            {{product.brand.id}}
-        </li>
-    </ul>
+<div class="container-fluid mt-4">
+  <div class="row justify-content-center">
+    <div class="col-auto mb-3"*ngFor="let product of products; let i=index" 
+    (click)="toggleBox(i)">
+      <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="{{product.picture}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.brand.id}}</p>
+          <div class="product-detail-box" #boxes>
+            <app-product-detail [product]="product"></app-product-detail>
+          </div>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
