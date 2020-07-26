@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { KeycloakService, KeycloakAuthGuard } from 'keycloak-angular';
 
 @Injectable()
@@ -14,6 +14,7 @@ export class AppAuthGuard extends KeycloakAuthGuard {
         this.keycloakAngular.login();
         return;
       }
+      
       console.log('role restriction given at app-routing.module for this route', route.data.roles);
       console.log('User roles coming after login from keycloak :', this.roles);
       const requiredRoles = route.data.roles;

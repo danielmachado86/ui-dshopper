@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserService } from './user.service';
 import { KeycloakService } from 'keycloak-angular';
 
 @Component({
@@ -14,11 +13,18 @@ export class AppComponent {
   isCollapsed = true;
 
 
-  constructor(public authService: KeycloakService) {
+  constructor(private keycloakService: KeycloakService) {
   }
 
-  async ngOnInit() {
-    this.isAuthenticated = await this.authService.isLoggedIn();
+  ngOnInit() {
+    this.isAuthenticated = this.keycloakService.getKeycloakInstance().authenticated;
+  }
+
+  public login() {
+    this.keycloakService.login();
+  }
+  public logout() {
+    this.keycloakService.logout();
   }
 
 }

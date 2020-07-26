@@ -4,26 +4,15 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { AppAuthGuard } from './app.authguard';
 import { UserAccountComponent } from './user-account/user-account.component';
-import { AppPublicAuthGuard } from './app.publicauthguard';
 
 const routes: Routes = [
   { 
     path: '',
     component: ProductSearchComponent,
-    // canActivate: [AppPublicAuthGuard], 
-    // data: { roles: ['user'] } 
   },
   {
     path: 'signup',
     component: UserRegistrationComponent,
-    // canActivate: [AppPublicAuthGuard], 
-    // data: { roles: ['user'] } 
-  },
-  { 
-    path: 'products',
-    component: ProductSearchComponent,
-    // canActivate: [AppPublicAuthGuard], 
-    // data: { roles: ['user'] } 
   },
   { 
     path: 'account',
@@ -36,6 +25,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AppAuthGuard, AppPublicAuthGuard]
+  providers: [AppAuthGuard]
 })
 export class AppRoutingModule { }
