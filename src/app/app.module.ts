@@ -13,6 +13,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializer } from './app-init';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { GoogleMapsComponent } from './google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { UserAccountComponent } from './user-account/user-account.component';
     ProductDetailComponent,
     UserRegistrationComponent,
     UserAccountComponent,
+    GoogleMapsComponent,
   ],
   imports: [
     BrowserModule,
