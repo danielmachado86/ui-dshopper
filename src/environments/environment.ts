@@ -6,13 +6,13 @@ import { KeycloakConfig } from 'keycloak-angular';
 
 const keycloakConfig: KeycloakConfig = {
   url: 'http://localhost:8180/auth',
-  realm: 'quarkus',
+  realm: 'dshopping',
   clientId: 'frontend-service'
 };
 
 export const environment = {
   production: false,
-  PRODUCTS_API_URL: 'http://localhost:8082/api',
+  PRODUCTS_API_URL: 'http://localhost:8082/api/products',
   USERS_API_URL: 'http://localhost:8083/api',
   keycloak: keycloakConfig
 };
